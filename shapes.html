@@ -7,8 +7,19 @@
   <title>Figuras geométricas | Curso práctico de JavaScript</title>
 </head>
 <body>
-  <h1>Figuras geométricas</h1>
-  <input type="text" id="lado">Lado cuadrado
+  <header>
+    <h1>Figuras geométricas</h1>
+    <p>Primer taller del curso práctico de JavaScript</p>
+  </header>
+  <section>
+    <h2>Calcula el área y perímetro de un cuadrado</h2>
+    <form action="">
+      <label for="lado">Escribe cuánto mide cada lado de tu cuadrado:</label>
+      <input type="number" id="lado">
+      <button type="button" onclick="calcularPerimetroCuadrado()">Perímetro</button>
+      <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+    </form>
+  </section>
 </body>
 <script src="./shapes.js"></script>
 </html>
