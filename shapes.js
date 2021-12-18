@@ -5,10 +5,10 @@ console.log("Los lados del cuadrado miden: " + ladoCuadrado + "cm");
 
 function perimetroCuadrado(lado) {
   return lado * 4;
-} 
+}
 //console.log("El perímetro del cuadrado es: " + perimetroCuadrado() + "cm");
 
-function areaCuadrado(lado){
+function areaCuadrado(lado) {
   return lado * lado;
 }
 //console.log("El área del cuadrado es: " + areaCuadrado + "cm^2");
@@ -32,13 +32,13 @@ console.group("Información triángulo");
 
 //console.log("La altura del triángulo es: " + alturaTriangulo + "cm");
 
-function perimetroTriangulo(lado1,lado2,base){
+function perimetroTriangulo(lado1, lado2, base) {
   return lado1 + lado2 + base;
 }
 //console.log("El perímetro del triángulo es: " + perimetroTriangulo + "cm");
 function areaTriangulo(base, altura) {
   return (base * altura) / 2;
-} 
+}
 //console.log("El área del triángulo es: " + areaCuadrado + "cm^2");
 console.groupEnd();
 
@@ -58,8 +58,8 @@ function perimetroCirculo(radio) {
   return diametro * pi;
 }
 
-function areaCirculo(radio){
-  return (radio * radio) * pi;
+function areaCirculo(radio) {
+  return radio * radio * pi;
 }
 //const perimetroCirculo = diametroCirculo * pi;
 // console.log("El perímetro del círculo es: " + perimetroCirculo + "cm");
@@ -68,15 +68,12 @@ function areaCirculo(radio){
 // console.log("El área del círculo es: " + areaCirculo + "cm^2");
 console.groupEnd;
 
-
-
-
 // Código de interacción con HTML
 
 function calcularPerimetroCuadrado() {
   const input = document.getElementById("lado");
   const value = input.value;
-  
+
   const perimetro = perimetroCuadrado(value);
   alert(perimetro);
 }
@@ -84,7 +81,26 @@ function calcularPerimetroCuadrado() {
 function calcularAreaCuadrado() {
   const input = document.getElementById("lado");
   const value = input.value;
-  
+
   const area = areaCuadrado(value);
   alert(area);
+}
+
+function alturaTrianguloIso(ladoA, ladoB, base) {
+  if (ladoA != ladoB) {
+    alert(
+      "Los lados del triángulo no son iguales, no es un triángulo isosceles."
+    );
+  } else {
+    return (altura = Math.sqrt(ladoA * ladoB - (base * base) / 4));
+  }
+}
+
+function calcularAlturaTriangulo() {
+  const ladoTriangulo = document.getElementById("lado");
+  const valueLado = ladoTriangulo.value;
+  const baseTriangulo = document.getElementById("base");
+  const valueBase = baseTriangulo.value;
+  const alturaTriangulo = alturaTrianguloIso(valueLado, valueBase);
+  alert(alturaTriangulo);
 }

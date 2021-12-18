@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Figuras geométricas | Curso práctico de JavaScript</title>
-</head>
-<body>
-  <header>
-    <h1>Figuras geométricas</h1>
-    <p>Primer taller del curso práctico de JavaScript</p>
-  </header>
-  <section>
-    <h2>Calcula el área y perímetro de un cuadrado</h2>
-    <form action="">
-      <label for="lado">Escribe cuánto mide cada lado de tu cuadrado:</label>
-      <input type="number" id="lado">
-      <button type="button" onclick="calcularPerimetroCuadrado()">Perímetro</button>
-      <button type="button" onclick="calcularAreaCuadrado()">Área</button>
-    </form>
-  </section>
-</body>
-<script src="./shapes.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figuras geométricas | Curso práctico de JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Figuras geométricas</h1>
+      <p>Primer taller del curso práctico de JavaScript</p>
+    </header>
+    <section class="container">
+      <h2>Calcula el área y perímetro de un cuadrado</h2>
+      <!--Formulario cuadrado-->
+      <form action="" class="cuadrado">
+        <label for="lado">Escribe cuánto mide cada lado de tu cuadrado:</label>
+        <input type="number" id="lado" />
+        <div class="square-buttons">
+          <button type="button" onclick="calcularPerimetroCuadrado()">
+            Perímetro
+          </button>
+          <button type="button" onclick="calcularAreaCuadrado()">Área</button>
+        </div>
+      </form>
+      <!--Formulario triángulo-->
+      <h2>Calcula la altura de un triángulo isósceles</h2>
+      <form action="" class="triangulo">
+        <label for="ladoA">Escribe el lado A del triángulo</label>
+        <input type="number" id="ladoA" />
+        <label for="ladoB">Escribe el lado B del triángulo</label>
+        <input type="number" id="ladoB" />
+        <label for="base">Escribe la base de la figura</label>
+        <input type="number" id="base" />
+        <button type="button" onclick="calcularAlturaTriangulo()">
+          Altura
+        </button>
+      </form>
+    </section>
+  </body>
+  <script src="./shapes.js"></script>
 </html>
