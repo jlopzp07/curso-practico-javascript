@@ -9,3 +9,10 @@ Repositorio para subir los proyectos realizados en el curso de javascript de pla
 - Segundo: implementar las fórmulas en JavaScript
 - Tercero: crear funciones
 - Cuarto: integrar JavaScript con HTML
+
+## Taller #2: Porcentajes y descuentos
+
+- Primero paso: definir las fórmulas
+- Segundo: implementar las fórmulas en JavaScript
+- Tercero: crear funciones
+- Cuarto: integrar JavaScript con HTML
