@@ -28,3 +28,8 @@ function calculateDiscount() {
   result.innerText = "El precio final con descuento es $" + totalPrice; 
 
 }
+
+function calculateDiscountCoupon() {
+  const coupon = document.getElementById("coupons");
+  const couponValue = coupon.value;
+}
