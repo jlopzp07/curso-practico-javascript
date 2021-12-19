@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Porcentaje y descuentos | Curso práctico de JavaScript</title>
-  <link rel="stylesheet" href="./discount-styles.css">
-</head>
-<body>
-  <section>
-    <h1>Porcentajes y descuentos</h1>
-  </section>
-</body>
-<script src="./discounts.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porcentaje y descuentos | Curso práctico de JavaScript</title>
+    <link rel="stylesheet" href="./discount-styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="header">
+        <h1>Porcentajes y descuentos</h1>
+        <p>Segundo taller del curso práctico de JavaScript</p>
+      </section>
+      <section>
+        <h2>Calcula el precio a pagar de tus productos con descuento</h2>
+        <form action="">
+          <label for="inputPrice">Escribe el precio de tu producto: </label>
+          <input type="number" id="inputPrice" oninput="calculateDiscount()" />
+          <label for="inputDiscount"
+            >Escribe el descuento de tu producto:</label
+          >
+          <input
+            type="number"
+            id="inputDiscount"
+            oninput="calculateDiscount()"
+          />
+          <button type="button" onclick="calculateDiscount()">
+            Calcular precio final
+          </button>
+          <p id="finalPrice" class="result"></p>
+        </form>
+      </section>
+      <section>
+        <h2>Calcula el precio a pagar de tus productos si tienes cupones!</h2>
+        <form action="">
+          <label for="inputPrice">Escribe el precio de tu producto: </label>
+          <input type="number" id="inputPrice" oninput="calculateDiscount()" />
+          <label for="inputDiscount"
+            >Selecciona el cupón que vas a redimir:</label
+          >
+          <select name="coupons" id="coupons">
+            <option value="coupon20">CuponPlatzi20</option>
+            <option value="coupon25">CuponPlatzi25</option>
+            <option value="coupon30">CuponPlatzi30</option>
+          </select>
+          <button type="button" onclick="calculateDiscount()">
+            Calcular precio final
+          </button>
+          <p id="finalPrice" class="result"></p>
+        </form>
+      </section>
+    </div>
+  </body>
+  <script src="./discounts.js"></script>
 </html>

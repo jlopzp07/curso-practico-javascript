@@ -1,12 +1,14 @@
 * {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 :root {
   --bg: #27292d;
   --shadow: #15171b;
-  --secondary: #CDDC39;
+  --secondary: #cddc39;
+  --hover: #a8b62d;
 }
 
 html {
@@ -14,4 +16,77 @@ html {
   color: var(--secondary);
   font-family: monospace;
   font-size: 15px;
+}
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+p,
+label {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+input,
+select {
+  height: 35px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px 10px;
+}
+
+select {
+  padding: 0;
+}
+
+option {
+  color: #000;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: var(--secondary);
+  width: 500px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover);
+}
+
+.result {
+  margin: 0 auto;
 }
