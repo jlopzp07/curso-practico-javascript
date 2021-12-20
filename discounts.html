@@ -36,19 +36,13 @@
         <h2>Calcula el precio a pagar de tus productos si tienes cupones!</h2>
         <form action="">
           <label for="inputPrice">Escribe el precio de tu producto: </label>
-          <input type="number" id="inputPrice" oninput="calculateDiscount()" />
-          <label for="inputDiscount"
-            >Selecciona el cupón que vas a redimir:</label
-          >
-          <select name="coupons" id="coupons">
-            <option value="coupon20">CuponPlatzi20</option>
-            <option value="coupon25">CuponPlatzi25</option>
-            <option value="coupon30">CuponPlatzi30</option>
-          </select>
+          <input type="number" id="originalPrice" oninput="calculateDiscount()" />
+          <label for="inputDiscount">Escribe el cupón que vas a redimir:</label>
+          <input type="text" id="coupon" />
           <button type="button" onclick="calculateDiscountCoupon()">
-            Calcular precio final
+            Calcular precio con descuento
           </button>
-          <p id="finalPrice" class="result"></p>
+          <p id="finalDiscountPrice" class="result"></p>
         </form>
       </section>
     </div>
