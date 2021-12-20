@@ -16,3 +16,10 @@ Repositorio para subir los proyectos realizados en el curso de javascript de pla
 - Segundo: implementar las fórmulas en JavaScript
 - Tercero: crear funciones
 - Cuarto: integrar JavaScript con HTML
+
+## Taller #3: Media, moda y mediana
+
+- Primero paso: definir las fórmulas
+- Segundo: implementar las fórmulas en JavaScript
+- Tercero: crear funciones
+- Cuarto: integrar JavaScript con HTML
