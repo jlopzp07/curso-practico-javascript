@@ -10,7 +10,6 @@ function calcularMedia(lista) {
   return promedioLista;
 }
 
-
 //Calcular mediana
 const lista1 = [100, 4000000, 200, 500, 800];
 
@@ -40,3 +39,27 @@ if (esPar(lista1.length)) {
 }
 
 //Calcular moda
+//const listaModa = [1, 2, 3, 1, 100, 2, 3, 4, 2, 2, 2, 1, 10, 1000];
+
+function calcularModa(listaModa) {
+  const listaModaCount = {}; //se convertirá el array en objeto
+  listaModa.map(function (elemento) {
+    if (listaModaCount[elemento]) {
+      //si el elemento ya existe (true)
+      listaModaCount[elemento] += 1;
+    } else {
+      listaModaCount[elemento] = 1;
+    }
+  });
+
+  const listaArray = Object.entries(listaModaCount).sort(function (
+    valorAcumulado,
+    nuevoValor
+  ) {
+    return valorAcumulado[1] - nuevoValor[1];
+  });
+
+  const moda = listaArray[listaArray.length - 1];
+
+  return moda;
+}
