@@ -67,13 +67,13 @@ function calcularModa(listaModa) {
 //calcular media geométrica
 //Se necesita una lista de números
 //Se necesita un total de números
-const listaNumeros = [1.20,1.15,1.33,1.25];
+const listaNumeros = [1.2, 1.15, 1.33, 1.25];
 const total = listaNumeros.length;
 const inversa = 1 / total;
 const calcMulti = listaNumeros.reduce(function (val = 0, currentVal) {
-  return (val * currentVal);
+  return val * currentVal;
 });
 
-function calcMediaGeo (calcMulti) {
+function calcMediaGeo(calcMulti) {
   return calcMulti ** inversa;
 }
