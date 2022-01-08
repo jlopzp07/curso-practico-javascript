@@ -18,7 +18,7 @@
           <h1>Financial freedom calculator</h1>
           <ul>
             <li><a href="#">home</a></li>
-            <li><a href="#">calculator</a></li>
+            <li><a href="#salary-section">calculator</a></li>
             <li><a href="#">about us</a></li>
             <li><a href="#">contact</a></li>
           </ul>
@@ -61,7 +61,7 @@
             </div>
           </div>
         </section>
-        <section class="section2">
+        <section class="section2" id="salary-section">
           <div class="box-container">
             <form action="">
               <label for="salary">Enter your salary</label>
@@ -70,337 +70,408 @@
               <input type="number" placeholder="%" id="deductions" />
               <p id="answer"></p>
             </form>
-            <button id="start-button" onclick="finalSalary()">
+            <button class="btn" id="start-button" onclick="finalSalary()">
               <span>start</span>
             </button>
           </div>
         </section>
-        <section class="section2 calcSection">
-          <div class="box-container">
-            <h3>Necessities</h3>
-            <form action="" class="calcSection-form">
-              <div class="input-row">
-                <label for="">Rent</label>
-                <input type="number" id="rent" placeholder="$" />
+        <article id="calculations">
+          <section class="section2 calcSection">
+            <div class="box-container">
+              <h3>Necessities</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Rent</label>
+                  <input type="number" id="rent" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Food</label>
+                  <input type="number" id="food" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Home bills</label>
+                  <input type="number" id="home-bills" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Transportation</label>
+                  <input
+                    type="number"
+                    id="transportation"
+                    placeholder="$"
+                    onchange="necessities()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="necessities-total"></p>
+                    <p id="necessities-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="box-container">
+              <h3>Long term savings for spending</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Big purchases</label>
+                  <input type="number" id="big-purchases" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Rainy day fund</label>
+                  <input type="number" id="rainy-fund" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Vacations</label>
+                  <input type="number" id="vacations" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Unexpected medical expenses</label>
+                  <input
+                    type="number"
+                    id="unexpected-expenses"
+                    placeholder="$"
+                    onchange="longTermSavings()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="long-term-total"></p>
+                    <p id="long-term-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="section2 calcSection">
+            <div class="box-container">
+              <h3>Play</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Spoiling yourself & your family</label>
+                  <input type="number" id="spoiling" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Leisurely expenses</label>
+                  <input
+                    type="number"
+                    id="leisure"
+                    placeholder="$"
+                    onchange="play()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="play-total"></p>
+                    <p id="play-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="box-container">
+              <h3>Education</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Coaching</label>
+                  <input type="number" id="coaching" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Mentoring</label>
+                  <input type="number" id="mentoring" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Books</label>
+                  <input type="number" id="books" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Courses</label>
+                  <input
+                    type="number"
+                    id="courses"
+                    placeholder="$"
+                    onchange="education()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="education-total"></p>
+                    <p id="education-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="section2 calcSection">
+            <div class="box-container">
+              <h3>Financial freedom</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Stocks</label>
+                  <input type="number" id="stocks" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Mutual funds</label>
+                  <input type="number" id="mutual-funds" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Real estate investing</label>
+                  <input type="number" id="real-estate" placeholder="$" />
+                </div>
+                <div class="input-row">
+                  <label for="">Any other investments</label>
+                  <input
+                    type="number"
+                    id="other-investments"
+                    placeholder="$"
+                    onchange="financialFreedom()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="financial-freedom-total"></p>
+                    <p id="financial-freedom-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="box-container">
+              <h3>Give</h3>
+              <form action="" class="calcSection-form">
+                <div class="input-row">
+                  <label for="">Charitable donations</label>
+                  <input
+                    type="number"
+                    id="charitable"
+                    placeholder="$"
+                    onchange="give()"
+                  />
+                </div>
+                <div class="totals">
+                  <h3>Total</h3>
+                  <div class="values">
+                    <p id="give-total"></p>
+                    <p id="give-percentage"></p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="section2 calcSection">
+            <div class="calc-left-side">
+              <h3>Results</h3>
+              <div class="headers">
+                <h3>Jar</h3>
+                <div class="percentages-header">
+                  <h3>Ideal %</h3>
+                  <h3>Your %</h3>
+                </div>
               </div>
               <div class="input-row">
-                <label for="">Food</label>
-                <input type="number" id="food" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Home bills</label>
-                <input type="number" id="home-bills" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Transportation</label>
-                <input
-                  type="number"
-                  id="transportation"
-                  placeholder="$"
-                  oninput="necessities()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Necessities</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >In order to have healthy finances, this indicator must be
+                      less or equal to the ideal percentage shown in the input.
+                      Necessities are related with rent, food (groceries), home
+                      bills, transportations, everythings that is
+                      indispensable.</span
+                    >
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="necessities-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-needs"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="necessities-percentage"
                     placeholder="%"
+                    id="total-real-percentage-needs"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="box-container">
-            <h3>Long term savings for spending</h3>
-            <form action="" class="calcSection-form">
               <div class="input-row">
-                <label for="">Big purchases</label>
-                <input type="number" id="big-purchases" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Rainy day fund</label>
-                <input type="number" id="rainy-fund" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Vacations</label>
-                <input type="number" id="vacations" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Unexpected medical expenses</label>
-                <input
-                  type="number"
-                  id="unexpected-expenses"
-                  placeholder="$"
-                  oninput="longTermSavings()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Play</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >In order to have healthy finances, this indicator must be
+                      less or equal to the ideal percentage shown in the input.
+                      Play is related with spoiling yourself, buying things,
+                      hanging out, friendship, love, family, whatever spend you
+                      have that is not a necessity.</span
+                    >
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="long-term-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-play"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="long-term-percentage"
                     placeholder="%"
+                    id="total-real-percentage-play"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-        </section>
-        <section class="section2 calcSection">
-          <div class="box-container">
-            <h3>Play</h3>
-            <form action="" class="calcSection-form">
+              <hr>
               <div class="input-row">
-                <label for="">Spoiling yourself & your family</label>
-                <input type="number" id="spoiling" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Leisurely expenses</label>
-                <input
-                  type="number"
-                  id="leisure"
-                  placeholder="$"
-                  oninput="play()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Financial freedom</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >In order to have healthy finances, this indicator must be
+                      greater or equal to the ideal percentage shown in the
+                      input. Financial freedom consists in every save you have
+                      addressed to increase your income and your savings.
+                    </span>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="play-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-freedom"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="play-percentage"
                     placeholder="%"
+                    id="total-real-percentage-freedom"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="box-container">
-            <h3>Education</h3>
-            <form action="" class="calcSection-form">
               <div class="input-row">
-                <label for="">Coaching</label>
-                <input type="number" id="coaching" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Mentoring</label>
-                <input type="number" id="mentoring" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Books</label>
-                <input type="number" id="books" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Courses</label>
-                <input
-                  type="number"
-                  id="courses"
-                  placeholder="$"
-                  oninput="education()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Long term savings for spending</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >In order to have healthy finances, this indicator must be
+                      greater or equal to the ideal percentage shown in the
+                      input. Long term savings is related to all the savings
+                      that you have to cover any emergency, any job loss, any
+                      circumstance, without using your main income.</span
+                    >
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="education-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-long"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="education-percentage"
                     placeholder="%"
+                    id="total-real-percentage-long"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-        </section>
-        <section class="section2 calcSection">
-          <div class="box-container">
-            <h3>Financial freedom</h3>
-            <form action="" class="calcSection-form">
               <div class="input-row">
-                <label for="">Stocks</label>
-                <input type="number" id="stocks" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Mutual funds</label>
-                <input type="number" id="mutual-funds" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Real estate investing</label>
-                <input type="number" id="real-estate" placeholder="$" />
-              </div>
-              <div class="input-row">
-                <label for="">Any other investments</label>
-                <input
-                  type="number"
-                  id="other-investments"
-                  placeholder="$"
-                  oninput="financialFreedom()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Education</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >This indicator must be greater or equal to the ideal
+                      percentage shown in the input. One of the main investments
+                      a person must do to get financial freedom is to invest in
+                      education. This indicator shows how much you are saving in
+                      education.
+                    </span>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="financial-freedom-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-education"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="financial-freedom-percentage"
                     placeholder="%"
+                    id="total-real-percentage-education"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="box-container">
-            <h3>Give</h3>
-            <form action="" class="calcSection-form">
               <div class="input-row">
-                <label for="">Charitable donations</label>
-                <input
-                  type="number"
-                  id="charitable"
-                  placeholder="$"
-                  oninput="give()"
-                />
-              </div>
-              <div class="totals">
-                <h3>Total</h3>
+                <div class="input-row">
+                  <p>Give</p>
+                  <div class="tooltip">
+                    <span class="tooltipText"
+                      >This indicator is related with your giving, to have a
+                      good and healthy finances thinking, giving is a good start
+                      because it helps you detach from money.
+                    </span>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </div>
+                </div>
                 <div>
                   <input
-                    class="total"
                     type="text"
-                    id="charity-total"
-                    placeholder="$"
+                    placeholder="%"
+                    id="total-ideal-percentage-give"
+                    disabled
                   />
                   <input
-                    class="percentage"
                     type="text"
-                    id="charity-percentage"
                     placeholder="%"
+                    id="total-real-percentage-give"
+                    disabled
                   />
                 </div>
               </div>
-            </form>
-          </div>
-        </section>
-        <section class="section2 calcSection">
-          <div class="calc-left-side">
-            <h3>Results</h3>
-            <div class="headers">
-              <h3>Jar</h3>
-              <div class="percentages-header">
-                <h3>Ideal %</h3>
-                <h3>Your %</h3>
+            </div>
+            <div class="calc-right-side">
+              <button class="btn analysis" onclick="total(finalTotal)">
+                <span>Run analysis</span>
+              </button>
+              <div class="final-analysis">
+                <div class="final-analysis-content">
+                  <h3 id="initialValue-label">Initial value</h3>
+                  <p id="initialValue"></p>
+                </div>
+                <div class="final-analysis-content">
+                  <h3 id="finalTotal-label">Total Spendings</h3>
+                  <p id="finalTotal"></p>
+                </div>
+                <p></p>
               </div>
             </div>
-            <div class="input-row">
-              <p>Necessities</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-needs"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-needs"/>
-              </div>
-            </div>
-            <div class="input-row">
-              <p>Play</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-play"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-play"/>
-              </div>
-            </div>
-            <div class="input-row">
-              <p>Financial freedom</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-freedom"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-freedom"/>
-              </div>
-            </div>
-            <div class="input-row">
-              <p>Long term savings for spending</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-long"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-long"/>
-              </div>
-            </div>
-            <div class="input-row">
-              <p>Education</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-education"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-education"/>
-              </div>
-            </div>
-            <div class="input-row">
-              <p>Give</p>
-              <div>
-                <input
-                  type="number"
-                  placeholder="%"
-                  id="total-ideal-percentage-give"
-                />
-                <input type="number" placeholder="%" id="total-real-percentage-give"/>
-              </div>
-            </div>
-          </div>
-          <div class="calc-right-side"></div>
-        </section>
+          </section>
+        </article>
       </header>
     </div>
   </body>
 
   <script src="./calcScripts.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </html>

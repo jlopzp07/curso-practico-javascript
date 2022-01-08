@@ -15,7 +15,12 @@
 html {
   background-color: var(--primary);
   color: var(--secondary);
+  scroll-behavior: smooth;
 }
+
+/* article {
+  display: block;
+} */
 
 .container {
   width: 70%;
@@ -61,7 +66,7 @@ html {
   margin-bottom: 25px;
 }
 
-.section1 p {
+p {
   font-size: 1.8rem;
   font-weight: 400;
 }
@@ -86,7 +91,7 @@ html {
 .section2 {
   padding: 50px;
   margin-top: 50px;
-  height: 650px;
+  height: 700px;
   background-color: var(--bg);
 }
 
@@ -122,7 +127,7 @@ input::placeholder {
   color: var(--secondary);
 }
 
-button {
+.btn {
   margin-top: 80px;
   font-size: 2.5rem;
   font-weight: bold;
@@ -141,6 +146,7 @@ button:hover {
 
 .calcSection { 
   display: flex;
+  justify-content: space-between;
 }
 
 .input-row {
@@ -165,6 +171,14 @@ h3 {
   justify-content: space-between;
 }
 
+.values {
+  display: flex;
+}
+
+.values p {
+  margin-left: 50px;
+}
+
 .total {
   width: 200px;
 }
@@ -177,6 +191,10 @@ h3 {
 .calc-left-side {
   width: 600px;
   align-content: center;
+}
+
+.calc-right-side {
+  width: 600px;
 }
 
 
@@ -196,6 +214,61 @@ h3 {
 
 .percentages-header h3 {
   margin: 0 20px;
+}
+
+.analysis {
+  margin-top: 0;
+}
+
+.final-analysis-content h3 {
+  margin-bottom: 0;
+  display: none;
+}
+
+.final-analysis-content p {
+  font-size: 2.5rem;
+}
+
+.final-analysis-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltipText {
+  visibility: hidden;
+  min-width: 500px;
+  font-size: 1.5rem;
+  line-height: 25px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 100%;
+  left: -100%;
+  z-index: 1000;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+ion-icon {
+  font-size: 2.5rem;
+  margin-left: 5px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 1px solid var(--secondary);
 }
 
 @media screen and (max-width: 1025px){
